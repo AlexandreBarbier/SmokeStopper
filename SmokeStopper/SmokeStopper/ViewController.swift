@@ -35,8 +35,8 @@ class ViewController: UIViewController {
         let r = SmokeManagerSharedInstance.history
         self.startTimer()
         for value in r  {
-            let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-            if calendar?.compareDate(NSDate(), toDate: value.date, toUnitGranularity: NSCalendarUnit.Day) == NSComparisonResult.OrderedSame {
+            let calendar = NSCalendar.currentCalendar()
+            if calendar.compareDate(NSDate(), toDate: value.date, toUnitGranularity: NSCalendarUnit.Day) == NSComparisonResult.OrderedSame {
                 counter = value.count
             }
         }
@@ -55,23 +55,31 @@ class ViewController: UIViewController {
         let componentFormatter = NSDateComponentsFormatter()
         componentFormatter.unitsStyle = .Abbreviated
         componentFormatter.zeroFormattingBehavior = .DropAll
+        let calendar = NSCalendar.currentCalendar()
+        let last = SmokeManagerSharedInstance.lastSmoke
+        if  calendar.compareDate(NSDate(), toDate: last.date, toUnitGranularity: NSCalendarUnit.Day) == NSComparisonResult.OrderedAscending {
+            counter = 0
+        }
+        
         let interval = NSDate().timeIntervalSinceDate(SmokeManagerSharedInstance.lastSmoke.date)
+        
         if let timeSince = componentFormatter.stringFromTimeInterval(interval) {
-            
-            self.hourCountLabel.text = "\(timeSince)"
+          
             let userInterval = SmokeManagerSharedInstance.lastSmoke.smokeInterval
             let date = NSDate(timeIntervalSince1970: interval)
-           let components = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.components([.Hour,.Minute] , fromDate: date)
-            print(userInterval.hour, components.hour)
-            if components.hour < userInterval.hour  {
-                self.hourCountLabel.textColor = .redColor()
-            }
-            else if userInterval.hour == components.hour && components.minute < userInterval.min  {
-                self.hourCountLabel.textColor = .redColor()
-            }
-            else {
-                self.hourCountLabel.textColor = .greenColor()
-            }
+           let components = NSCalendar.currentCalendar().components([.Day,.Hour,.Minute] , fromDate: date)
+            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                self.hourCountLabel.text = "\(timeSince)"
+                if components.hour - 1 < userInterval.hour  {
+                    self.hourCountLabel.textColor = .redColor()
+                }
+                else if userInterval.hour == components.hour && components.minute < userInterval.min  {
+                    self.hourCountLabel.textColor = .redColor()
+                }
+                else {
+                    self.hourCountLabel.textColor = .greenColor()
+                }
+            })
         }
     }
     
@@ -82,6 +90,7 @@ class ViewController: UIViewController {
 
     @IBAction func addButtontouch(sender: AnyObject) {
         counter++
+        SmokeManagerSharedInstance.saveDay(counter)
         SmokeManagerSharedInstance.lastSmoke.date = NSDate()
         self.updateTime()
     }

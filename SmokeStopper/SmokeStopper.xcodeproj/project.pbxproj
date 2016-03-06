@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D7093871C8C2710000A3969 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7093861C8C2710000A3969 /* HistoryTableViewController.swift */; };
 		8DC7D42B1C8B0948000478C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC7D42A1C8B0948000478C8 /* AppDelegate.swift */; };
 		8DC7D42D1C8B0948000478C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC7D42C1C8B0948000478C8 /* ViewController.swift */; };
 		8DC7D4301C8B0948000478C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DC7D42E1C8B0948000478C8 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D7093861C8C2710000A3969 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		8DC7D4271C8B0948000478C8 /* SmokeStopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmokeStopper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC7D42A1C8B0948000478C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DC7D42C1C8B0948000478C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				8DC7D4331C8B0948000478C8 /* LaunchScreen.storyboard */,
 				8DC7D4361C8B0948000478C8 /* Info.plist */,
 				8DC7D43F1C8B3383000478C8 /* SettingViewController.swift */,
+				8D7093861C8C2710000A3969 /* HistoryTableViewController.swift */,
 			);
 			path = SmokeStopper;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				8DC7D42D1C8B0948000478C8 /* ViewController.swift in Sources */,
 				8DC7D42B1C8B0948000478C8 /* AppDelegate.swift in Sources */,
 				8DC7D4401C8B3383000478C8 /* SettingViewController.swift in Sources */,
+				8D7093871C8C2710000A3969 /* HistoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +306,7 @@
 				8DC7D43B1C8B0948000478C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

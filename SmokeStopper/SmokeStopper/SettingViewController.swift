@@ -11,7 +11,6 @@ import UIKit
 class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var intervalPicker: UIPickerView!
-    
     @IBOutlet weak var maxTextField: UITextField!
     
     private var min = 0 {
@@ -35,7 +34,7 @@ class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let interval = SmokeManagerSharedInstance.lastSmoke.smokeInterval
         min = interval.min
         hour = interval.hour
-        // Do any additional setup after loading the view.
+        maxTextField.text = "\(SmokeManagerSharedInstance.lastSmoke.maxSmokePerDay)"
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,7 +43,7 @@ class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     @IBAction func saveTouch(sender: AnyObject) {
-        SmokeManagerSharedInstance.lastSmoke.smokeInterval = (hour,min)
+        SmokeManagerSharedInstance.lastSmoke.smokeInterval = (hour, min)
         SmokeManagerSharedInstance.lastSmoke.maxSmokePerDay = Int(maxTextField.text!) != nil ? Int(maxTextField.text!)! : 0
         self.dismissViewControllerAnimated(true, completion: nil)
     }

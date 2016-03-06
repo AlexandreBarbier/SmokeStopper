@@ -34,33 +34,38 @@ class smokeManager: NSObject {
     
     struct coderKey {
         static let historyKey = "smokeHistory"
+        static let lastSmokeDate = "lastSmokeDate"
+        static let maxSmokePerDay = "maxSmokePerDay"
+        static let intervalMin = "intervalMin"
+        static let intervalHour = "intervalHour"
     }
     
     struct lastSmokeInfo {
+
         var date = NSDate() {
             didSet {
-                NSUserDefaults().setObject(date, forKey: "lastSmokeDate")
+                NSUserDefaults().setObject(date, forKey: coderKey.lastSmokeDate)
             }
         }
         
         var maxSmokePerDay : Int {
             get {
-                return NSUserDefaults().integerForKey("maxSmokePerDay")
+                return NSUserDefaults().integerForKey(coderKey.maxSmokePerDay)
             }
             set {
-                NSUserDefaults().setInteger(newValue, forKey: "maxSmokePerDay")
+                NSUserDefaults().setInteger(newValue, forKey: coderKey.maxSmokePerDay)
             }
         }
         
         var smokeInterval : (hour:Int, min:Int) {
             get {
-                let min = NSUserDefaults().integerForKey("intervalMin")
-                let hour = NSUserDefaults().integerForKey("intervalHour")
+                let min = NSUserDefaults().integerForKey(coderKey.intervalMin)
+                let hour = NSUserDefaults().integerForKey(coderKey.intervalHour)
                 return (hour,min)
             }
             set {
-                NSUserDefaults().setInteger(newValue.min, forKey: "intervalMin")
-                NSUserDefaults().setInteger(newValue.hour, forKey: "intervalHour")
+                NSUserDefaults().setInteger(newValue.min, forKey: coderKey.intervalMin)
+                NSUserDefaults().setInteger(newValue.hour, forKey: coderKey.intervalHour)
             }
         }
     }
@@ -72,7 +77,7 @@ class smokeManager: NSObject {
         super.init()
         let coder = NSUserDefaults()
         
-        if let lSdate = coder.objectForKey("lastSmokeDate") as? NSDate {
+        if let lSdate = coder.objectForKey(coderKey.lastSmokeDate) as? NSDate {
             lastSmoke.date =  lSdate
         }
         
@@ -89,9 +94,9 @@ class smokeManager: NSObject {
         let sCount = smokeCount()
         sCount.date = NSDate()
         sCount.count = todayCount
-        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        let calendar = NSCalendar.currentCalendar()
         
-        if let last = history.last where calendar?.compareDate(NSDate(), toDate: last.date, toUnitGranularity: NSCalendarUnit.Day) == NSComparisonResult.OrderedSame {
+        if let last = history.last where calendar.compareDate(NSDate(), toDate: last.date, toUnitGranularity: NSCalendarUnit.Day) == NSComparisonResult.OrderedSame {
             history.removeLast()
         }
         
