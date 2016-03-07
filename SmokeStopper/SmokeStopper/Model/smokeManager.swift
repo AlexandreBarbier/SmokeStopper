@@ -44,38 +44,39 @@ class smokeManager: NSObject {
 
         var date = NSDate() {
             didSet {
-                NSUserDefaults().setObject(date, forKey: coderKey.lastSmokeDate)
+                userDefault!.setObject(date, forKey: coderKey.lastSmokeDate)
             }
         }
         
         var maxSmokePerDay : Int {
             get {
-                return NSUserDefaults().integerForKey(coderKey.maxSmokePerDay)
+                return userDefault!.integerForKey(coderKey.maxSmokePerDay)
             }
             set {
-                NSUserDefaults().setInteger(newValue, forKey: coderKey.maxSmokePerDay)
+                userDefault!.setInteger(newValue, forKey: coderKey.maxSmokePerDay)
             }
         }
         
         var smokeInterval : (hour:Int, min:Int) {
             get {
-                let min = NSUserDefaults().integerForKey(coderKey.intervalMin)
-                let hour = NSUserDefaults().integerForKey(coderKey.intervalHour)
+                let min = userDefault!.integerForKey(coderKey.intervalMin)
+                let hour = userDefault!.integerForKey(coderKey.intervalHour)
                 return (hour,min)
             }
             set {
-                NSUserDefaults().setInteger(newValue.min, forKey: coderKey.intervalMin)
-                NSUserDefaults().setInteger(newValue.hour, forKey: coderKey.intervalHour)
+                userDefault!.setInteger(newValue.min, forKey: coderKey.intervalMin)
+                userDefault!.setInteger(newValue.hour, forKey: coderKey.intervalHour)
             }
         }
     }
     
     var history = [smokeCount]()
     var lastSmoke = lastSmokeInfo()
+    static let userDefault = NSUserDefaults(suiteName: "group.smokeStopper")
     
-    private override init() {
+    override init() {
         super.init()
-        let coder = NSUserDefaults()
+        let coder = smokeManager.userDefault!
         
         if let lSdate = coder.objectForKey(coderKey.lastSmokeDate) as? NSDate {
             lastSmoke.date =  lSdate
@@ -101,7 +102,7 @@ class smokeManager: NSObject {
         }
         
         history.append(sCount)
-        let coder = NSUserDefaults()
+        let coder = smokeManager.userDefault!
         let k = NSMutableArray()
         for val in history {
             k.addObject(NSKeyedArchiver.archivedDataWithRootObject(val))

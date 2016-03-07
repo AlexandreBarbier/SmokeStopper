@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		8D7093871C8C2710000A3969 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7093861C8C2710000A3969 /* HistoryTableViewController.swift */; };
+		8D70938F1C8C5742000A3969 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D70938E1C8C5742000A3969 /* NotificationCenter.framework */; };
+		8D7093921C8C5742000A3969 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7093911C8C5742000A3969 /* TodayViewController.swift */; };
+		8D7093951C8C5742000A3969 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D7093931C8C5742000A3969 /* MainInterface.storyboard */; };
+		8D7093991C8C5742000A3969 /* today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8D70938C1C8C5742000A3969 /* today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8D7093A01C8C5961000A3969 /* smokeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC7D43D1C8B0D23000478C8 /* smokeManager.swift */; };
 		8DC7D42B1C8B0948000478C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC7D42A1C8B0948000478C8 /* AppDelegate.swift */; };
 		8DC7D42D1C8B0948000478C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC7D42C1C8B0948000478C8 /* ViewController.swift */; };
 		8DC7D4301C8B0948000478C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DC7D42E1C8B0948000478C8 /* Main.storyboard */; };
@@ -17,8 +22,39 @@
 		8DC7D4401C8B3383000478C8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC7D43F1C8B3383000478C8 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8D7093971C8C5742000A3969 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8DC7D41F1C8B0948000478C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D70938B1C8C5742000A3969;
+			remoteInfo = today;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8D70939D1C8C5743000A3969 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8D7093991C8C5742000A3969 /* today.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		8D7093861C8C2710000A3969 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		8D70938C1C8C5742000A3969 /* today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D70938E1C8C5742000A3969 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		8D7093911C8C5742000A3969 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		8D7093941C8C5742000A3969 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		8D7093961C8C5742000A3969 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D70939E1C8C57BF000A3969 /* today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = today.entitlements; sourceTree = "<group>"; };
+		8D70939F1C8C57EA000A3969 /* SmokeStopper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SmokeStopper.entitlements; sourceTree = "<group>"; };
 		8DC7D4271C8B0948000478C8 /* SmokeStopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmokeStopper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC7D42A1C8B0948000478C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DC7D42C1C8B0948000478C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +67,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8D7093891C8C5742000A3969 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D70938F1C8C5742000A3969 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC7D4241C8B0948000478C8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -41,10 +85,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D70938D1C8C5742000A3969 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D70938E1C8C5742000A3969 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8D7093901C8C5742000A3969 /* today */ = {
+			isa = PBXGroup;
+			children = (
+				8D70939E1C8C57BF000A3969 /* today.entitlements */,
+				8D7093911C8C5742000A3969 /* TodayViewController.swift */,
+				8D7093931C8C5742000A3969 /* MainInterface.storyboard */,
+				8D7093961C8C5742000A3969 /* Info.plist */,
+			);
+			path = today;
+			sourceTree = "<group>";
+		};
 		8DC7D41E1C8B0948000478C8 = {
 			isa = PBXGroup;
 			children = (
 				8DC7D4291C8B0948000478C8 /* SmokeStopper */,
+				8D7093901C8C5742000A3969 /* today */,
+				8D70938D1C8C5742000A3969 /* Frameworks */,
 				8DC7D4281C8B0948000478C8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				8DC7D4271C8B0948000478C8 /* SmokeStopper.app */,
+				8D70938C1C8C5742000A3969 /* today.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +126,7 @@
 		8DC7D4291C8B0948000478C8 /* SmokeStopper */ = {
 			isa = PBXGroup;
 			children = (
+				8D70939F1C8C57EA000A3969 /* SmokeStopper.entitlements */,
 				8DC7D43C1C8B0CD1000478C8 /* Model */,
 				8DC7D42A1C8B0948000478C8 /* AppDelegate.swift */,
 				8DC7D42C1C8B0948000478C8 /* ViewController.swift */,
@@ -84,6 +151,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8D70938B1C8C5742000A3969 /* today */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D70939A1C8C5743000A3969 /* Build configuration list for PBXNativeTarget "today" */;
+			buildPhases = (
+				8D7093881C8C5742000A3969 /* Sources */,
+				8D7093891C8C5742000A3969 /* Frameworks */,
+				8D70938A1C8C5742000A3969 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = today;
+			productName = today;
+			productReference = 8D70938C1C8C5742000A3969 /* today.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		8DC7D4261C8B0948000478C8 /* SmokeStopper */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DC7D4391C8B0948000478C8 /* Build configuration list for PBXNativeTarget "SmokeStopper" */;
@@ -91,10 +175,12 @@
 				8DC7D4231C8B0948000478C8 /* Sources */,
 				8DC7D4241C8B0948000478C8 /* Frameworks */,
 				8DC7D4251C8B0948000478C8 /* Resources */,
+				8D70939D1C8C5743000A3969 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8D7093981C8C5742000A3969 /* PBXTargetDependency */,
 			);
 			name = SmokeStopper;
 			productName = SmokeStopper;
@@ -111,8 +197,23 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Alexandre Barbier";
 				TargetAttributes = {
+					8D70938B1C8C5742000A3969 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = GSBM8D97ZM;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					8DC7D4261C8B0948000478C8 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = GSBM8D97ZM;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -130,11 +231,20 @@
 			projectRoot = "";
 			targets = (
 				8DC7D4261C8B0948000478C8 /* SmokeStopper */,
+				8D70938B1C8C5742000A3969 /* today */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8D70938A1C8C5742000A3969 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D7093951C8C5742000A3969 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC7D4251C8B0948000478C8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -148,6 +258,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8D7093881C8C5742000A3969 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D7093921C8C5742000A3969 /* TodayViewController.swift in Sources */,
+				8D7093A01C8C5961000A3969 /* smokeManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC7D4231C8B0948000478C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -162,7 +281,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8D7093981C8C5742000A3969 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D70938B1C8C5742000A3969 /* today */;
+			targetProxy = 8D7093971C8C5742000A3969 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		8D7093931C8C5742000A3969 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D7093941C8C5742000A3969 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		8DC7D42E1C8B0948000478C8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -182,6 +317,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8D70939B1C8C5743000A3969 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = today/today.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = today/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.abarbier.SmokeStopper.today;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8D70939C1C8C5743000A3969 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = today/today.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = today/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.abarbier.SmokeStopper.today;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		8DC7D4371C8B0948000478C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -269,10 +434,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmokeStopper/SmokeStopper.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SmokeStopper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.abarbier.SmokeStopper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -280,16 +450,29 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmokeStopper/SmokeStopper.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SmokeStopper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.abarbier.SmokeStopper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8D70939A1C8C5743000A3969 /* Build configuration list for PBXNativeTarget "today" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D70939B1C8C5743000A3969 /* Debug */,
+				8D70939C1C8C5743000A3969 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		8DC7D4221C8B0948000478C8 /* Build configuration list for PBXProject "SmokeStopper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
